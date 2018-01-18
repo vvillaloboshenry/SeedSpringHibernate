@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- To change this license header, choose License Headers in Project Properties. 
+	To change this template file, choose Tools | Templates and open the template 
+	in the editor. -->
+
+<!DOCTYPE tiles-definitions PUBLIC  "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"  "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+
+<tiles-definitions>
+
+	<!-- Template Definition -->
+	<definition name="template-def"
+		template="/WEB-INF/views/tiles/layouts/index.jsp">
+		<put-attribute name="title" value="" />
+		<put-attribute name="header"
+			value="/WEB-INF/views/tiles/templates/header.jsp" />
+		<put-attribute name="menu"
+			value="/WEB-INF/views/tiles/templates/menu.jsp" />
+		<put-attribute name="body" value="" />
+		<put-attribute name="footer"
+			value="/WEB-INF/views/tiles/templates/footer.jsp" />
+	</definition>
+
+	<!-- Main Page -->
+	<definition name="*" extends="template-def">
+		<put-attribute name="title" value="Welcome uno" />
+		<put-attribute name="body" value="/WEB-INF/views/{1}.jsp" />
+	</definition>
+	<definition name="*/*" extends="template-def">
+		<put-attribute name="title" value="Welcome dos" />
+		<put-attribute name="body" value="/WEB-INF/views/{1}/{2}.jsp" />
+	</definition>
+	<definition name="*/*/*" extends="template-def">
+		<put-attribute name="title" value="Welcome dos" />
+		<put-attribute name="body" value="/WEB-INF/views/{1}/{2}/{3}.jsp" />
+	</definition>
+	<!-- Apache Tiles Page -->
+	<!--<definition name="apachetiles" extends="template-def"> <put-attribute 
+		name="title" value="ApacheTiles" /> <put-attribute name="body" value="/WEB-INF/views/pages/apachetiles.jsp" 
+		/> </definition> -->
+
+	<!-- Spring MVC Page -->
+	<!-- <definition name="springmvc" extends="template-def"> <put-attribute 
+		name="title" value="SpringMVC" /> <put-attribute name="body" value="/WEB-INF/views/pages/springmvc.jsp" 
+		/> </definition> -->
+
+</tiles-definitions>
